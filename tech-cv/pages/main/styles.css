@@ -79,8 +79,9 @@ link {
 .header {
   width: 100%;
   height: 80px;
-  background-image: url(./assets/images/backgroung_main.jpg);
-  background-position: center -80px;
+  background-image: url(../../assets/images/backgroung_main.jpg);
+  background-repeat: no-repeat;
+  background-position: center 0;
 }
 
 .header-container {
@@ -94,6 +95,10 @@ link {
   flex-direction: column;
   margin-top: 20px;
   line-height: 30px;
+}
+
+.logo-burger {
+  display: none;
 }
 
 .name {
@@ -141,25 +146,30 @@ link {
   transition: 0.5s;
 }
 
+.burger {
+  display: none;
+}
+
 /* ================================= about ================================= */
 
 .hero {
   width: 100%;
   height: 673px;
-  background-image: url(./assets/images/backgroung_main.jpg);
-  background-position: center -160px;
+  background-image: url(../../assets/images/backgroung_main.jpg);
+  background-position: center -80px;
+  background-repeat: no-repeat;
 }
 
 .about-container {
   width: 100%;
-  margin: 80px 0;
+  margin: 80px 0 0;
   display: flex;
   justify-content: space-around;
 }
 
 .about {
-  width: 500px;
-  height: 500px;
+  max-width: 500px;
+  max-height: 500px;
   display: flex;
   gap: 40px;
   flex-direction: column;
@@ -226,7 +236,7 @@ link {
 }
 
 .photo {
-  width: 500px;
+  width: 450px;
   height: 497px;
   overflow: hidden;
   border: 10px solid #131d64;
@@ -320,7 +330,7 @@ link {
 }
 
 .certificate:hover {
-  transform: scale(1.25);
+  transform: scale(1.05);
   transition: 0.8s;
   cursor: pointer;
   box-shadow: 10px 10px 20px rgb(0 0 0 / 35%);
@@ -389,7 +399,7 @@ link {
 .footer {
   width: 100%;
   height: 200px;
-  background-image: url(./assets/images/backgroung_main.jpg);
+  background-image: url(../../assets/images/backgroung_main.jpg);
   background-position: center;
 }
 
@@ -417,4 +427,357 @@ link {
   text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
 }
 
-/* ============================================================================ */
+/* =================================== modal =================================== */
+
+.modal {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.5s ease-out;
+}
+
+.modal.show {
+  visibility: visible;
+  z-index: 100;
+  opacity: 1;
+}
+
+.modal .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.modal-window {
+  position: relative;
+  z-index: 2;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+  background-color: #ffffff;
+  padding: 40px;
+}
+
+.btn-close {
+  position: absolute;
+  font-size: 20px;
+  right: 15px;
+  top: 10px;
+  border: none;
+  background: none;
+  opacity: 0.7;
+}
+
+.btn-close:hover {
+  opacity: 1;
+}
+
+/* =============================== media queries ============================= */
+
+@media screen and (max-width: 1279px) {
+  .header {
+    background-image: url(../../assets/images/backgroung_main768.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 0px;
+  }
+
+  .logo-burger {
+    display: none;
+  }
+
+  .nav-item {
+    font-size: 17px;
+  }
+
+  .hero {
+    height: 100%;
+    background-image: url(../../assets/images/backgroung_main768.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center -80px;
+  }
+
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin: 40px 0 0;
+  }
+
+  .about-title {
+    margin: 0 auto;
+    font-size: 25px;
+  }
+
+  .about {
+    padding-bottom: 40px;
+    gap: 20px;
+  }
+
+  .btn-me {
+    margin: 0px 175px;
+  }
+
+  /* ========================= skills ================================= */
+
+  .skills {
+    height: 780px;
+  }
+
+  .skills-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .modal-window img {
+    width: 500px;
+  }
+
+  /* =========================== projects ================================= */
+
+  .projects {
+    height: 1230px;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+
+  /* ============================= footer =============================== */
+
+  .footer {
+    background-image: url(../../assets/images/footer768.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .contacts-container {
+    gap: 40px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    background-image: url(../../assets/images/backgroung_main320.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 0px;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .logo {
+    line-height: 18px;
+  }
+
+  .name {
+    font-size: 15px;
+  }
+
+  .subtitle {
+    font-size: 8px;
+  }
+
+  /* ================================= burg ================================= */
+
+  .nav-list {
+    position: fixed;
+    width: 280px;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    background-color: #0d123a;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding-top: 40px;
+    transform: translateX(100%);
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+  }
+
+  .burger {
+    width: 30px;
+    height: 22px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1;
+    cursor: pointer;
+    margin: 25px 15px 10px;
+    transition: 0.8s ease-in-out;
+  }
+
+  .burger .line {
+    width: 30px;
+    height: 9.1%;
+    background-color: #ffffff;
+    display: block;
+  }
+
+  .burger.open {
+    transform: rotate(90deg);
+    transition: 0.7s ease-in-out;
+  }
+
+  .nav-list.active {
+    transform: translateX(0%);
+    transition: all 0.8s ease-in-out;
+    z-index: 1;
+  }
+
+  .nav-link {
+    font-size: 32px;
+  }
+
+  .lock {
+    overflow: hidden;
+  }
+
+  .overlay {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background-color: rgba(41, 41, 41, 0.6);
+  }
+
+  .logo-burger {
+    position: fixed;
+    top: 23px;
+    left: 10px;
+    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 18px;
+  }
+
+  .double {
+    transition: 0.8s;
+    opacity: 0;
+  }
+
+  /* ================================= hero ================================= */
+
+  .hero {
+    background-image: url(../../assets/images/backgroung_main320.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center -80px;
+  }
+
+  .hero-image {
+    height: 350px;
+  }
+
+  .photo {
+    width: 300px;
+    height: 330px;
+  }
+
+  .about {
+    max-width: 300px;
+    max-height: 500px;
+  }
+
+  .about-title {
+    font-size: 20px;
+  }
+
+  .description {
+    font-size: 13px;
+    text-align: justify;
+  }
+
+  .btn-me {
+    margin: 0px 72px;
+  }
+
+  /* ================================ skills =================================== */
+
+  .section-title {
+    margin: 30px 0;
+  }
+
+  .skills {
+    height: 660px;
+  }
+
+  .skills-wrapper {
+    max-width: 300px;
+  }
+
+  .section-list {
+    width: 300px;
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .skills-description {
+    width: 300px;
+    text-align: justify;
+  }
+
+  .certificate img {
+    width: 280px;
+    height: 190px;
+  }
+
+  .modal-window {
+    width: 300px;
+    padding: 10px;
+  }
+
+  .modal-window img {
+    width: 280px;
+  }
+
+  /* ============================== projects ============================== */
+
+  .projects {
+    height: 1100px;
+  }
+
+  .project-container {
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  .profiles {
+    width: 270px;
+    height: 180px;
+  }
+
+  .footer {
+    background-image: url(../../assets/images/backgroung_main320.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .contacts-container {
+    margin-top: 60px;
+    gap: 25px;
+    line-height: 18px;
+  }
+}
